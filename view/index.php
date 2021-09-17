@@ -1,5 +1,5 @@
 <?php
-require('../proses/funtion.php'); 
+require('../proses/funtion.php');
 
 $post = query("SELECT * FROM post");
 
@@ -13,8 +13,7 @@ $post = query("SELECT * FROM post");
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="css/index.css">
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
      <title>Diary</title>
 </head>
 
@@ -42,32 +41,32 @@ $post = query("SELECT * FROM post");
                               <h4>Muhammad Azqilana</h4>
                               <ul>
                                    <li>
-                                        <label for="gambar"></label>
+                                        <label class="fas fa-file" for="gambar"></label>
                                         <input type="file" name="gambar" id="gambar">
                                    </li>
                                    <li><textarea name="post" id="post" rows="5" required></textarea></li>
-                                   <li><button type="submit" name = "submit">POST</button></li>
+                                   <li><button type="submit" name="submit">POST</button></li>
                               </ul>
                          </li>
                     </ul>
                </form>
           </div>
-          <?php foreach($post as $p) :?>
-          <div class="post">
-               <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
-               <h4><?= $p ['username'];?></h4>
-               <div class="navbar">
-                    <ul>
-                         <li><a class="fas fa-edit" href="ubah/ubahpost.html">Edit</a></li>
-                         <li><a class="fas fa-trash" href="">Hapus</a></li>
-                    </ul>
-                    <div class="menu-post">
-                         <input type="checkbox">
-                         <a class="fas fa-ellipsis-v"></a>
+          <?php foreach ($post as $p) : ?>
+               <div class="post">
+                    <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
+                    <h4><?= $p['username']; ?></h4>
+                    <div class="navbar">
+                         <ul>
+                              <li><a class="fas fa-edit" href="ubah/ubahpost.html">Edit</a></li>
+                              <li><a class="fas fa-trash" href="">Hapus</a></li>
+                         </ul>
+                         <div class="menu-post">
+                              <input type="checkbox">
+                              <a class="fas fa-ellipsis-v"></a>
+                         </div>
                     </div>
+                    <textarea name="post" id="post" rows="7" disabled readonly><?= $p['post'] ?></textarea>
                </div>
-               <textarea name="post" id="post" rows="7" disabled readonly><?= $p['post']?></textarea>
-          </div>
           <?php endforeach; ?>
      </main>
 </body>
