@@ -98,6 +98,7 @@ main{
      margin-top:-37px;
      margin-left:240px;
      z-index:3; 
+     opacity: 0;
 }
 .mypost textarea{
      border-color:yellow;
