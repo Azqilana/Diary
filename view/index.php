@@ -40,7 +40,10 @@ $post = query("SELECT * FROM post");
                               <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
                               <h4>Muhammad Azqilana</h4>
                               <ul>
-                                   <li><input type="file" name="gambar" id="gambar"></li>
+                                   <li>
+                                        <i class="fas fa-image"></i>
+                                        <input type="file" name="gambar" id="gambar">
+                                   </li>
                                    <li><textarea name="post" id="post" rows="5" required></textarea></li>
                                    <li><button type="submit" name="submit">POST</button></li>
                               </ul>

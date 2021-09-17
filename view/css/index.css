@@ -100,6 +100,12 @@ main{
      z-index:3; 
      opacity: 0;
 }
+.mypost form ul li ul li .fa-image{
+     position:absolute;
+     font-size:3em;
+     margin-top:-35px; 
+     margin-left: 260px;
+}
 .mypost textarea{
      border-color:yellow;
      resize: none;
