@@ -89,6 +89,9 @@ main{
 .mypost h4{
      transform: translateX(9%);
 }
+.mypost form ul li ul li input{
+     width: 90px;background-color:blue; border-radius:5px; padding:15px 0px; position:absolute; margin-top:-37px; margin-left:240px; z-index:3; 
+}
 .mypost textarea{
      border-color:yellow;
      resize: none;
