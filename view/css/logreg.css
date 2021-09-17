@@ -1,0 +1,42 @@
+*{
+     margin: 0%;
+     padding: 0;
+     overflow: hidden;
+}
+main{
+     display: grid;
+     justify-items: center;
+     padding: 15px 0;
+}
+table{
+     border: 1px solid yellow;
+     padding: 20px;
+     border-radius: 10px;
+}
+th h4{
+     font-size: 2.5em;
+     color: #000;
+}
+td{
+     padding: 10px;
+     text-align: center;
+}
+td input{
+     margin: 10px 0px;
+     font-size:1em ;
+     padding: 10px;
+     border-radius: 20px;
+     font-weight: bold;
+     text-align: center;
+     width:90%;
+}
+td button{
+     background-color: yellow;
+     margin: 10px 0px;
+     font-size:2em;
+     padding: 10px;
+     border-radius: 25px;
+     font-weight: bold;
+     text-align: center;
+     width:90%;
+}

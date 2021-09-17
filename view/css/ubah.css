@@ -1,0 +1,200 @@
+*{
+     margin: 0px;
+     padding: 0pt;
+     list-style: none;
+     text-decoration: none;
+}
+.avatar{
+     position: absolute;
+     width: 50px;
+     height: 50px;
+     border-radius: 25%;
+     overflow: hidden;
+     transform: translateY(-31%);
+     border: 1px solid yellow;
+     cursor: pointer;
+}
+img{
+     width: 100%;
+}
+.avatar-profil{
+     width: 210px;
+     height: 210px;
+     margin-left: 40px;
+     border-radius: 50%;
+     overflow: hidden;
+     border: 10px solid rgb(231, 182, 20);
+}
+.sosmed{
+     border: 1px solid yellow;
+     padding: 5px;
+     border-radius: 5px;
+     margin-top: 10px;
+     display:flex;
+     justify-content: space-evenly;
+}
+.sosmed a{
+     padding: 0px 10px;
+}
+.sosmed a:hover{
+     color: yellow;
+}
+nav{
+     box-shadow: 2px 2px 2px 2px rgb(218, 208, 126);
+     padding: 25px;
+     border: 1px solid rgb(240, 217, 17);
+     border-radius: 10px;
+     margin: 2% 5%;
+}
+nav ul {
+     display: flex;
+     flex-direction: column;
+     position: absolute;
+     transform: translateY(-70%);
+     background-position: center;
+     padding:10px 5px ;
+     opacity: 0;
+     z-index: 2;
+     border-radius: 10px;
+     border: 1px solid rgb(252, 252, 106) ;
+     box-shadow: 1px 1px 1px 1px rgb(218, 208, 126);
+}
+nav ul li {
+     padding: 10px;
+     padding-right: 25px;
+     border-radius: 50%;
+     border-bottom: 2px solid yellow;
+     border-top: 2px solid yellow;
+}
+
+nav ul li:hover{
+     background-color:yellow;
+}
+ul li a{
+     padding-left: 25px;
+     color: rgb(14, 14, 10);
+}
+.menu-toggle h4{
+     transform: translateX(5%);
+}
+.menu-toggle input{
+     position: absolute;
+     z-index: 4;
+     width: 200px;
+     height: 200px;
+     transform: translateY(-78%);
+     opacity: 0;
+}
+.menu-toggle input:checked ~ img{
+     border: 1px solid yellow ;
+}
+.menu-toggle input:checked ~ h4{
+     color:rgb(8, 8, 8);
+}
+nav ul.slide{
+      transform: translateY(35%);
+      opacity: 1;
+      transition: 1s;
+}
+.profil{
+     display: grid;
+     grid-template-columns:1fr 1fr 1fr; 
+     grid-template-rows: 1fr 1fr;
+     padding:0px  10%;
+}
+.profil a{
+     font-size: 2em;
+     color: #000;
+}
+.profil .fa-edit{
+     position: absolute;
+     color: rgb(228, 188, 9);
+     margin-left: 600px;
+}
+.profil table {
+     border: 1px solid yellow;
+     border-radius: 5px;
+}
+.profil table tr td{
+     margin: 10px 0px;
+     padding: 10px;
+     text-align: center;
+}
+.profil table tr td input{
+     margin: 10px 0px;
+     font-size:1em ;
+     padding: 10px;
+     border-radius: 20px;
+     font-weight: bold;
+     text-align: center;
+     width:90%;
+}
+.profil table tr td select{
+     font-size: 1.5em;
+     margin: 10px 0px;
+     padding: 10px;
+     border-radius: 20px;
+     font-weight: bold;
+     text-align: center;
+     width:90%;
+}
+.profil table tr td button{   
+     font-size:1.5em;
+     background-color: rgb(161, 238, 90);
+     margin: 5px 0px 0px 0px;
+     padding: 5px;
+     border-radius: 10px;
+     font-weight: bold;
+     text-align: center;
+     width:90%;
+}
+.profil form{
+     margin:10px;
+}
+th{
+     font-size: 2em;
+     padding: 10px 0px 5px 0px;
+}
+.gantigambar{
+     position: absolute;
+     width: 200px;
+     height: 200px;
+     border-radius:50%;
+     overflow: hidden;
+     margin-top: 2%;
+}
+.updategambar{
+     display:grid;
+     justify-items: center;
+}
+.updategambar form{
+     margin:70% 10% 10% 10%;
+}
+
+@media screen and (max-width: 885px) {
+     nav ul{
+          background-color: whitesmoke;
+     }
+     .menu-toggle h4{
+     transform: translateX(9%);
+     }
+     .profil{
+          width: 65%;
+     }
+}
+@media screen and (max-width:500px){
+      .menu-toggle h4{
+     transform: translateX(14%);
+     }
+}
+@media screen and (max-width: 415px) {
+
+     .menu-toggle h4{
+     transform: translateX(100%);
+     }
+
+     .profil{
+          width: 80%;
+     }
+
+}
