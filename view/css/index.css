@@ -81,13 +81,19 @@ main{
 .mypost{
      width: 50%;
      box-shadow: 1px 1px 1px 1px rgb(218, 208, 126);
-     padding: 25px;
+     padding: 50px;
      border: 1px solid rgb(240, 217, 17);
      border-radius: 10px;
      margin: 2% 5%;
+
 }
 .mypost h4{
      transform: translateX(9%);
+}
+.mypost form ul li ul li:first-child{
+     position: absolute;
+     margin-top:11%;
+     margin-left:10px;
 }
 .mypost form ul li ul li input{
      width: 90px;
@@ -95,16 +101,13 @@ main{
      border-radius:5px;
      padding:15px 0px;
      position:absolute;
-     margin-top:-37px;
-     margin-left:240px;
-     z-index:3; 
-     opacity: 0;
+     z-index:3;
+
 }
 .mypost form ul li ul li .fa-image{
+     background-color: blueviolet;
      position:absolute;
      font-size:3em;
-     margin-top:-35px; 
-     margin-left: 260px;
 }
 .mypost textarea{
      border-color:yellow;
@@ -117,7 +120,7 @@ main{
 .mypost button{
      width: 90px;
      height: 50px;
-     transform: translateY(45%);
+     transform: translateY(80%);
      font-size: 20px;
      font-weight: bold;
      border-radius: 10px;
