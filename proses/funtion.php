@@ -31,10 +31,11 @@ function register($register)
      $password = password_hash($password, PASSWORD_DEFAULT);
 
      // tambahkan userbaru ke database
-    mysqli_query($conn, "INSERT INTO user VALUES(null,'$longname', '$username','$email', '$password')");
+     mysqli_query($conn, "INSERT INTO user VALUES(null,'$longname', '$username','$email', '$password')");
      // var_dump($kirim);
      // die;
 
      return mysqli_affected_rows($conn);
 }
-
+?>
+<link rel="shortcut icon" href="../view/img/logo.png" type="image/x-icon">
