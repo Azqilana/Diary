@@ -19,8 +19,18 @@ function register($register)
      $username = stripslashes(htmlspecialchars(htmlspecialchars_decode($register['username'])));
      $email = stripslashes(htmlspecialchars(htmlspecialchars_decode($register['email'])));
      $password = mysqli_escape_string($conn, $register['password']);
+     $gambar = "logo.png";
+     $nomortelephon = 0;
+     $jenis_kelamin = "";
+     $tanggal_lahir = "";
+     $tempat_tinggal = "";
+     $pekerjaan = "";
+     $sekolah = "";
 
-     $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+
+
+     $result = mysqli_query($conn, "SELECT username FROM user_login WHERE username = '$username'");
+
 
      if (mysqli_fetch_assoc($result)) {
           echo "<script> alert('Maaf Udah Ada yang Punya');</script>";
@@ -30,10 +40,13 @@ function register($register)
 
      $password = password_hash($password, PASSWORD_DEFAULT);
 
-     // tambahkan userbaru ke database
-     mysqli_query($conn, "INSERT INTO user VALUES(null,'$longname', '$username','$email', '$password')");
-     // var_dump($kirim);
-     // die;
+     // tambahkan baru ke database
+     $query =  "INSERT INTO user_login VALUES(null,'$longname', '$username','$email', '$password');";
+     $query .= "INSERT INTO user_profile VALUES
+     (null,'$longname', '$username','$email','$nomortelephon','$gambar','$jenis_kelamin','$tanggal_lahir','$tempat_tinggal','$pekerjaan','$sekolah')";
+     mysqli_multi_query($conn, $query);
+
+
 
      return mysqli_affected_rows($conn);
 }
