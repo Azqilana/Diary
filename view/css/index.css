@@ -89,13 +89,7 @@ main{
 .mypost h4{
      transform: translateX(9%);
 }
-.mypost form ul li ul li:first-child{
-     position: absolute;
-     margin-top:11%;
-     margin-left:10px;
-     padding: 50px;
-     background-color: blue;
-}
+
 .mypost form ul li ul li .fa-image{
      background-color: blueviolet;
      position:absolute;
