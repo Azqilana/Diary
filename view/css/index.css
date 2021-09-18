@@ -90,11 +90,6 @@ main{
      transform: translateX(9%);
 }
 
-.mypost form ul li ul li .fa-image{
-     background-color: blueviolet;
-     position:absolute;
-     font-size:3em;
-}
 .mypost textarea{
      border-color:yellow;
      resize: none;
