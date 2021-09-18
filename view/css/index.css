@@ -93,14 +93,8 @@ main{
      position: absolute;
      margin-top:11%;
      margin-left:10px;
-}
-.mypost form ul li ul li input{
-     width: 90px;
-     background-color:blue;
-     border-radius:5px;
-     padding:15px 0px;
-     position:absolute;
-     z-index:3;
+     padding: 50px;
+     background-color: blue;
 }
 .mypost form ul li ul li .fa-image{
      background-color: blueviolet;
