@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                          <td><a class="fas fa-birthday-cake"></a></td>
-                         <td><input type="date" name="tanggal_lahir" id="tanggal_lahir" value="29-06-2000" disabled readonly></td>
+                         <td><input type="date" name="tanggal_lahir" id="tanggal_lahir" value="2000-06-21" disabled readonly></td>
                     </tr>
                     <tr>
                          <td><a class="fas fa-venus-mars"></a></td>
