@@ -57,7 +57,7 @@
                          <td><input type="date" name="tanggal_lahir" id="tanggal_lahir" value="29/06/2000" disabled readonly></td>
                     </tr>
                     <tr>
-                         <td><a class="fas fa-map-marker-alt"></a></td>
+                         <td><a class="fas fa-venus-mars"></a></td>
                          <td><input type="text" name="jenis_kelamin" id="jenis_kelamin" value="" disabled readonly></td>
                     </tr>
                     <tr>
