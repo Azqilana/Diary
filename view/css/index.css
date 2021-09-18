@@ -97,6 +97,8 @@ main{
      width: 96%;
      padding: 10px;
      transform: translateY(20%);
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     font-size: medium;
 }
 .mypost button{
      width: 90px;
