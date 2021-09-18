@@ -44,7 +44,7 @@ $post = query("SELECT * FROM post");
                                         <i class="fas fa-image"></i>
                                         <input type="file" name="gambar" id="gambar">
                                    </li>
-                                   <li><textarea name="post" id="post" rows="5" required></textarea></li>
+                                   <li><textarea name="post" id="post" rows="10" required></textarea></li>
                                    <li><button type="submit" name="submit">POST</button></li>
                               </ul>
                          </li>
