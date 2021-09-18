@@ -101,7 +101,7 @@ main{
 .mypost button{
      width: 90px;
      height: 50px;
-     transform: translateY(100%);
+     transform: translateY(90%);
      font-size: 20px;
      font-weight: bold;
      border-radius: 10px;
