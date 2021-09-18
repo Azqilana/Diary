@@ -76,11 +76,15 @@
                          </tr>
                          <tr>
                               <td><a class="fas fa-birthday-cake"></a></td>
-                              <td><input type="date" name="tanggal_lahir" id="tanggal_lahir" value="29/06/2000"></td>
+                              <td><input type="date" name="tanggal_lahir" id="tanggal_lahir" value="2000-06-21"></td>
+                         </tr>
+                         <tr>
+                              <td><a class="fas fa-venus-mars"></a></td>
+                              <td><input type="text" name="jenis_kelamin" id="jenis_kelamin" value="" ></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-map-marker-alt"></a></td>
-                              <td><input type="text" name="alamat" id="alamat" value=""></td>
+                              <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" value="" ></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-building"></a></td>
