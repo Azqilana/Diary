@@ -58,7 +58,11 @@
                     </tr>
                     <tr>
                          <td><a class="fas fa-map-marker-alt"></a></td>
-                         <td><input type="text" name="alamat" id="alamat" value="" disabled readonly></td>
+                         <td><input type="text" name="jenis_kelamin" id="jenis_kelamin" value="" disabled readonly></td>
+                    </tr>
+                    <tr>
+                         <td><a class="fas fa-map-marker-alt"></a></td>
+                         <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" value="" disabled readonly></td>
                     </tr>
                     <tr>
                          <td><a class="fas fa-building"></a></td>
