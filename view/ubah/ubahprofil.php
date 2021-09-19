@@ -1,3 +1,10 @@
+<?php
+require('../../proses/funtion.php');
+if (!isset($_SESSION["login"])) {
+     header("Location:../masuk.php");
+     exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,11 +87,11 @@
                          </tr>
                          <tr>
                               <td><a class="fas fa-venus-mars"></a></td>
-                              <td><input type="text" name="jenis_kelamin" id="jenis_kelamin" value="" ></td>
+                              <td><input type="text" name="jenis_kelamin" id="jenis_kelamin" value=""></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-map-marker-alt"></a></td>
-                              <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" value="" ></td>
+                              <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" value=""></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-building"></a></td>
