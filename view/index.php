@@ -1,7 +1,7 @@
 <?php
 require('../proses/funtion.php');
 
-$post = query("SELECT * FROM post");
+$post = query("SELECT * FROM user_post");
 
 
 ?>
