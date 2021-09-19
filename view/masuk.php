@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'functions.php';
+require ('../proses/function.php');
 
 // cek cookie
 if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
