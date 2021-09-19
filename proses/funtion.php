@@ -51,4 +51,3 @@ function register($register)
      return mysqli_affected_rows($conn);
 }
 ?>
-<link rel="shortcut icon" href="../view/img/logo.png" type="image/x-icon">
