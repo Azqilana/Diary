@@ -52,8 +52,7 @@ function register($register)
 function tambah($data)
 {
      global $conn;
-
-     $longname = "muhammad Azqilana";
+     
      $username = "azqilana";
      $tanggal_post = date('Y-m-d');
      $jam_post = date('h:m:s');
@@ -62,7 +61,7 @@ function tambah($data)
 
      $query = "INSERT INTO user_post
 				VALUES
-			  (null, '$longname', '$username', '$tanggal_post', '$jam_post','$post')
+			  (null,'$username', '$tanggal_post', '$jam_post','$post')
 			";
      mysqli_query($conn, $query);
 

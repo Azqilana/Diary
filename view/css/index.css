@@ -156,7 +156,6 @@ main{
      border-radius: 10px;
      cursor: pointer;
      opacity: 1;
-     z-index: 3;
 }
 .navbar ul li:hover{
      background-color: yellow;
@@ -228,7 +227,8 @@ main{
      margin-left: 58%;
      }
      .navbar ul{
-          margin-top:-250%;
+          margin-left:-75%;
+          margin-top:-50%;
      }
 }
 @media screen and (max-width:500px){
@@ -248,8 +248,8 @@ main{
      margin-left: 58%;
      }
      .navbar ul{
-     margin-left:10%;
-     margin-top: -250%;
+     margin-left:-95%;
+     margin-top: -50%;
      }
 }
 @media screen and (max-width: 415px) {
@@ -277,7 +277,22 @@ main{
      }
       .navbar ul{
      margin-left:-70%;
-     margin-top: -250%;
+     margin-top: -50%;
+     }
+
+}
+@media screen and (max-width: 375px) {
+
+ .navbar ul{
+     margin-left:-75%;
+     margin-top: -50%;
+     }
+
+}
+@media screen and (max-width: 320px) {
+
+ .navbar ul{
+     margin-left:-80%;
      }
 
 }

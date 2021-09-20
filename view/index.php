@@ -71,7 +71,7 @@ if (isset($_POST["submit"])) {
           <?php foreach ($post as $p) : ?>
                <div class="post">
                     <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
-                    <h4><?= $p['longname']; ?></h4>
+                    <h4><?= $p['username']; ?></h4>
                     <div class="navbar">
                          <ul>
                               <li><a class="fas fa-edit" href="ubah/ubahpost.php?id=<?= $p["id"]; ?>">Edit</a></li>
