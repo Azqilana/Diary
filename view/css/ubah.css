@@ -23,7 +23,7 @@ img{
      margin-left: 40px;
      border-radius: 50%;
      overflow: hidden;
-     border: 10px solid rgb(231, 182, 20);
+     border: 10px solid yellow;
 }
 .sosmed{
      border: 1px solid yellow;
@@ -40,9 +40,9 @@ img{
      color: yellow;
 }
 nav{
-     box-shadow: 2px 2px 2px 2px rgb(218, 208, 126);
+     box-shadow: 3px 3px 3px 3px rgb(218, 208, 126);
      padding: 25px;
-     border: 1px solid rgb(240, 217, 17);
+     border: 1px solid yellow;
      border-radius: 10px;
      margin: 2% 5%;
 }
@@ -56,7 +56,7 @@ nav ul {
      opacity: 0;
      z-index: 2;
      border-radius: 10px;
-     border: 1px solid rgb(252, 252, 106) ;
+     border: 1px solid yellow ;
      box-shadow: 1px 1px 1px 1px rgb(218, 208, 126);
 }
 nav ul li {
@@ -173,7 +173,7 @@ th{
 
 @media screen and (max-width: 885px) {
      nav ul{
-          background-color: whitesmoke;
+          background-color: white;
      }
      .menu-toggle h4{
      transform: translateX(9%);
