@@ -19,9 +19,9 @@ img{
      width: 100%;
 }
 nav{
-     box-shadow: 2px 2px 2px 2px rgb(218, 208, 126);
+     box-shadow: 3px 3px 3px 3px rgb(218, 208, 126);
      padding: 25px;
-     border: 1px solid rgb(240, 217, 17);
+     border: 1px solid yellow;
      border-radius: 10px;
      margin: 2% 5%;
 }
@@ -35,7 +35,7 @@ nav ul {
      opacity: 0;
      z-index: 2;
      border-radius: 10px;
-     border: 1px solid rgb(252, 252, 106) ;
+     border: 1px solid yellow ;
      box-shadow: 1px 1px 1px 1px rgb(218, 208, 126);
 }
 nav ul li {
@@ -81,9 +81,9 @@ main{
 }
 .mypost{
      width: 50%;
-     box-shadow: 1px 1px 1px 1px rgb(218, 208, 126);
+     box-shadow: 3px 3px 3px 3px rgb(218, 208, 126);;
      padding: 50px;
-     border: 1px solid rgb(240, 217, 17);
+     border: 1px solid yellow;
      border-radius: 10px;
      margin: 2% 5%;
 }
@@ -104,7 +104,7 @@ main{
 .mypost button{
      width: 90px;
      height: 50px;
-     transform: translateY(90%);
+     transform: translateY(70%);
      font-size: 20px;
      font-weight: bold;
      border-radius: 10px;
@@ -118,9 +118,9 @@ main{
      flex-direction:column ;
      user-select: none;
      width: 50%;
-     box-shadow: 2px 2px 2px 2px rgb(218, 208, 126);
+     box-shadow: 3px 3px 3px 3px rgb(218, 208, 126);
      padding: 25px;
-     border: 1px solid rgb(240, 217, 17);
+     border: 1px solid yellow;
      border-radius: 10px;
      margin: 2% 5%;
 }
@@ -133,7 +133,6 @@ main{
      border-radius: 10px;
      width: 100%;
      border: none;
-     padding: 25px;
      font-size: medium;
 }
 .menu{
@@ -147,24 +146,21 @@ main{
      width: 50px;
 }
 .navbar ul{
-     background-color: whitesmoke;
+     background-color: white;
      align-items: center;
      position: absolute;
-     margin-left: 100%;
+     margin-left: -60%;
      margin-bottom:100%;
-     margin-top:-230%;
+     margin-top:-50%;
      border: 1px solid yellow;
-     padding: 20%;
      border-radius: 10px;
      cursor: pointer;
-     opacity: 0;
-}
-.navbar ul li{
-     border: 1px solid yellow;
-     border-radius: 5px;   
+     opacity: 1;
+     z-index: 3;
 }
 .navbar ul li:hover{
      background-color: yellow;
+     border-radius:5px 5px ;
 }
 .navbar ul li:first-child :hover{
      color: teal;
@@ -178,34 +174,20 @@ main{
      margin-left: 20px;
      transform: translateY(-20px);
 }
-.menu-post input{
-     opacity: 0;
-     position: absolute;
-     width: 50px;
-     height: 50px;
-     transform: translateY(-45%);
-     z-index: 2;
-}
-.menu-post input:checked ~ a:last-child{
-     color: yellow;
-}
 .navbar ul li:first-child a{
      padding: 10px 22px 10px 10px;
 }
 .navbar ul li:last-child a{
      padding: 10px 11px 10px 10px;
 }
-.navbar ul.slide{
-     opacity: 1;
-}
 .viewpost{
      display: flex;
      flex-direction:column ;
      user-select: none;
      width: 50%;
-     box-shadow: 2px 2px 2px 2px rgb(218, 208, 126);
+     box-shadow: 3px 3px 3px 3px rgb(218, 208, 126);
      padding: 25px;
-     border: 1px solid rgb(240, 217, 17);
+     border: 1px solid yellow;
      border-radius: 10px;
      margin: 2% 5%;
 }

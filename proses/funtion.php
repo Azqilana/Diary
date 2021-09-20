@@ -53,19 +53,25 @@ function tambah($data)
 {
      global $conn;
 
-     $username = "";
-     $longname = "";
-     $tanggal_post = date("d/m/Y");
-     $jam_post = date('h:i:s');
-     $gambar_post = "logo.png"; //;
+     $longname = "muhammad Azqilana";
+     $username = "azqilana";
+     $tanggal_post = date('Y-m-d');
+     $jam_post = date('h:m:s');
      $post = htmlspecialchars($data["post"]);
 
 
      $query = "INSERT INTO user_post
 				VALUES
-			  (null, '$username', '$longname', '$tanggal_post', '$jam_post', '$gambar_post','$post')
+			  (null, '$longname', '$username', '$tanggal_post', '$jam_post','$post')
 			";
      mysqli_query($conn, $query);
 
+     return mysqli_affected_rows($conn);
+}
+function hapus($id)
+{
+     global $conn;
+     mysqli_query($conn, "DELETE FROM user_post WHERE id = $id");
+     
      return mysqli_affected_rows($conn);
 }

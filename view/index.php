@@ -10,18 +10,18 @@ if (isset($_POST["submit"])) {
      // cek apakah data berhasil di tambahkan atau tidak
      if (tambah($_POST) > 0) {
           echo "
-			<script>
-				alert('data berhasil ditambahkan!');
-				document.location.href = 'index.php';
-			</script>
-		";
+          		<script>
+          			alert('data berhasil ditambahkan!');
+          			document.location.href = 'index.php';
+          		</script>
+          	";
      } else {
           echo "
-          	<script>
-          		alert('data gagal ditambahkan!');
-          		document.location.href = 'index.php';
-          	</script>
-          ";
+               	<script>
+               		alert('data gagal ditambahkan!');
+               		document.location.href = 'index.php';
+               	</script>
+               ";
      }
 }
 ?>
@@ -61,7 +61,7 @@ if (isset($_POST["submit"])) {
                               <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
                               <h4>Muhammad Azqilana</h4>
                               <ul>
-                                   <li><textarea name="post" id="post" rows="10" required></textarea></li>
+                                   <li><textarea name="post" id="post" rows="5" required></textarea></li>
                                    <li><button type="submit" name="submit">POST</button></li>
                               </ul>
                          </li>
@@ -74,16 +74,12 @@ if (isset($_POST["submit"])) {
                     <h4><?= $p['longname']; ?></h4>
                     <div class="navbar">
                          <ul>
-                              <li><a class="fas fa-edit" href="ubah/ubahpost.html">Edit</a></li>
+                              <li><a class="fas fa-edit" href="ubah/ubahpost.php?id=<?= $p["id"]; ?>">Edit</a></li>
                               <li><a class="fas fa-trash" href="">Hapus</a></li>
                          </ul>
-                         <div class="menu-post">
-                              <input type="checkbox">
-                              <a class="fas fa-ellipsis-v"></a>
-                         </div>
                     </div>
+                    <?= $p['tanggal_post'] ?>
                     <textarea name="post" id="post" rows="7" disabled readonly><?= $p['post'] ?></textarea>
-                    <img src="img/<?= $p['gambar_post'] ?>" alt="<?= $p['gambar_post'] ?>" srcset="">
                </div>
           <?php endforeach; ?>
      </main>
