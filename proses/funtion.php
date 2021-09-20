@@ -81,24 +81,10 @@ function ubahpost($data)
      global $conn;
 
      $id = $data['id'];
-     $username = htmlspecialchars($data["username"]);
-     $tanggal_post = htmlspecialchars($data["tanggal_post"]);
-     $jam_post = htmlspecialchars($data["jam_post"]);
      $post = htmlspecialchars($data["post"]);
+     $query = "UPDATE user_post SET post = '$post' WHERE id = $id";
 
-     $query = "UPDATE user_post SET
-				'username'='$username',
-				'tanggal_post' = '$tanggal_post',
-                    'jam_post' = '$jam_post',
-				'post' = '$post',
-			  WHERE id = $id
-			";
-     // var_dump($query);
-     // die();
-     mysqli_query($conn, $query);
-     // var_dump($update);
-     // die();
+     $result = mysqli_query($conn, $query);
+     return $result;
 
-
-     return mysqli_affected_rows($conn);
 }

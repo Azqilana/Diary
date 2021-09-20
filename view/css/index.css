@@ -90,6 +90,9 @@ main{
 .mypost h4{
      transform: translateX(9%);
 }
+textarea:focus{
+     outline: none;
+}
 
 .mypost textarea{
      border-color:yellow;

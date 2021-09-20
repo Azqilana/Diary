@@ -14,8 +14,8 @@ if (isset($_POST["submit"])) {
      // die();
      // cek apakah data berhasil diubah atau tidak
      if (ubahpost($_POST) > 0) {
-          var_dump(ubahpost($_POST));
-          die();
+          // var_dump(ubahpost($_POST));
+          // die();
           echo "
           	<script>
           	alert('data berhasil diubah!');
@@ -71,8 +71,6 @@ if (isset($_POST["submit"])) {
                               <ul>
                                    <li>
                                         <input type="hidden" name='id' value="<?= $p['id'] ?>">
-                                        <input type="hidden" name="username" value="<?= $p['username'] ?>">
-                                        <input type="hidden" name="jam_post" value="<?= $p['jam_post'] ?>">
                                         <input type="date" name="tanggal_post" id="tanggal_post" value="<?= $p['tanggal_post'] ?>" required readonly>
                                    </li>
                                    <li><textarea name="post" id="post" rows="5" required><?= $p['post'] ?></textarea></li>

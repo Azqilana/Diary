@@ -30,6 +30,9 @@ td input{
      text-align: center;
      width:90%;
 }
+input:focus {
+  outline: none;
+}
 td button{
      background-color: yellow;
      margin: 10px 0px;

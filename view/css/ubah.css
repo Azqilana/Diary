@@ -129,6 +129,9 @@ nav ul.slide{
      text-align: center;
      width:90%;
 }
+input:focus {
+  outline: none;
+}
 .profil table tr td select{
      font-size: 1.5em;
      margin: 10px 0px;
