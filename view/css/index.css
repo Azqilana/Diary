@@ -3,6 +3,7 @@
      padding: 0pt;
      list-style: none;
      text-decoration: none;
+     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .avatar{
      position: absolute;
@@ -132,6 +133,8 @@ main{
      border-radius: 10px;
      width: 100%;
      border: none;
+     padding: 25px;
+     font-size: medium;
 }
 .menu{
      position: absolute;

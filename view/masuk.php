@@ -1,26 +1,26 @@
 <?php
 require('../proses/koneksi.php');
-session_start();
+//session_start();
 
 // cek cookie
-if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
-     $id = $_COOKIE['id'];
-     $key = $_COOKIE['key'];
+// if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+//      $id = $_COOKIE['id'];
+//      $key = $_COOKIE['key'];
 
-     // ambil username berdasarkan id
-     $result = mysqli_query($conn, "SELECT username FROM user_login WHERE id = $id");
-     $row = mysqli_fetch_assoc($result);
+//      // ambil username berdasarkan id
+//      $result = mysqli_query($conn, "SELECT username FROM user_login WHERE id = $id");
+//      $row = mysqli_fetch_assoc($result);
 
-     // cek cookie dan username
-     if ($key === hash('sha256', $row['username'])) {
-          $_SESSION['login'] = true;
-     }
-}
+//      // cek cookie dan username
+//      if ($key === hash('sha256', $row['username'])) {
+//           $_SESSION['login'] = true;
+//      }
+// }
 
-if (isset($_SESSION["login"])) {
-     header("Location: index.php");
-     exit;
-}
+// if (isset($_SESSION["login"])) {
+//      header("Location: index.php");
+//      exit;
+// }
 
 
 if (isset($_POST["login"])) {
@@ -37,19 +37,19 @@ if (isset($_POST["login"])) {
           $row = mysqli_fetch_assoc($result);
           if (password_verify($password, $row["password"])) {
                // set session
-               $_SESSION["login"] = true;
-               $_SESSION["username"]=$username;
-               $_SESSION["longname"] = $row["longname"];
+               // $_SESSION["login"] = true;
+               // $_SESSION["username"]=$username;
+               // $_SESSION["longname"] = $row["longname"];
                
 
                
 
-               // cek remember me
-               if (isset($_POST['remember'])) {
-                    // buat cookie
-                    setcookie('id', $row['id'], time() + 60);
-                    setcookie('key', hash('sha256', $row['username']), time() + 60);
-               }
+               // // cek remember me
+               // if (isset($_POST['remember'])) {
+               //      // buat cookie
+               //      setcookie('id', $row['id'], time() + 60);
+               //      setcookie('key', hash('sha256', $row['username']), time() + 60);
+               // }
 
                header("Location: index.php");
                exit;

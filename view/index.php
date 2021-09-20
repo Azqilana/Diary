@@ -1,13 +1,33 @@
 <?php
 require('../proses/funtion.php');
-if (!isset($_SESSION["login"])) {
-     header("Location: masuk.php");
-     exit;
-}
+// if (!isset($_SESSION["login"])) {
+//      header("Location: masuk.php");
+//      exit;
+// }
 
 $post = query("SELECT * FROM user_post WHERE username = '" . $_SESSION["username"] . "'");
 
 
+// cek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
+
+     // cek apakah data berhasil di tambahkan atau tidak
+     if (tambah($_POST) > 0) {
+          echo "
+			<script>
+				alert('data berhasil ditambahkan!');
+				document.location.href = 'index.php';
+			</script>
+		";
+     } else {
+          echo "
+          	<script>
+          		alert('data gagal ditambahkan!');
+          		document.location.href = 'index.php';
+          	</script>
+          ";
+     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +75,7 @@ $post = query("SELECT * FROM user_post WHERE username = '" . $_SESSION["username
           <?php foreach ($post as $p) : ?>
                <div class="post">
                     <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
-                    <h4><?= $p['username']; ?></h4>
+                    <h4><?= $p['longname']; ?></h4>
                     <div class="navbar">
                          <ul>
                               <li><a class="fas fa-edit" href="ubah/ubahpost.html">Edit</a></li>
@@ -67,6 +87,7 @@ $post = query("SELECT * FROM user_post WHERE username = '" . $_SESSION["username
                          </div>
                     </div>
                     <textarea name="post" id="post" rows="7" disabled readonly><?= $p['post'] ?></textarea>
+                    <img src="img/<?= $p['gambar_post'] ?>" alt="<?= $p['gambar_post'] ?>" srcset="">
                </div>
           <?php endforeach; ?>
      </main>

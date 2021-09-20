@@ -1,6 +1,6 @@
 <?php
 require('koneksi.php');
-session_start();
+//session_start();
 function query($query)
 {
      global $conn;
@@ -50,4 +50,23 @@ function register($register)
 
      return mysqli_affected_rows($conn);
 }
-?>
+function tambah($data)
+{
+     global $conn;
+
+     $username = //$_SESSION["username"];
+     $longname = //$_SESSION["longname"];
+     $tanggal_post = date("d/m/Y");
+     $jam_post = date('h:i:s');
+     $gambar_post = "logo.png"; //;
+     $post = htmlspecialchars($data["post"]);
+
+
+     $query = "INSERT INTO user_post
+				VALUES
+			  (null, '$username', '$longname', '$tanggal_post', '$jam_post', '$gambar_post','$post')
+			";
+     mysqli_query($conn, $query);
+
+     return mysqli_affected_rows($conn);
+}
