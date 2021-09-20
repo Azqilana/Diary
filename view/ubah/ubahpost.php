@@ -66,7 +66,10 @@ if (isset($_POST["submit"])) {
                               <div class="avatar"><img src="../img/azqilana2.jpg" alt="azqilana"></div>
                               <h4><?= $p['username']; ?></h4>
                               <ul>
-                                   <li><input type="hidden" name="id" value="<?= $p['id'] ?>"><input type="date" name="tanggal_post" id="tanggal_post" value="<?= $p['tanggal_post'] ?>" required readonly><a><?= $p['jam_post'] ?></a></li>
+                                   <li><input type="hidden" name="id" value="<?= $p['id'] ?>">
+                                        <input type="date" name="tanggal_post" id="tanggal_post" value="<?= $p['tanggal_post'] ?>" required readonly>
+                                        <a><?= $p['jam_post'] ?></a>
+                                   </li>
                                    <li><textarea name="post" id="post" rows="5" required><?= $p['post'] ?></textarea></li>
                                    <li><button type="submit">UPDATE</button></li>
                               </ul>
