@@ -1,9 +1,5 @@
 <?php
 require('../../proses/funtion.php');
-// if (!isset($_SESSION["login"])) {
-//      header("Location:../masuk.php");
-//      exit;jbjbj
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +12,7 @@ require('../../proses/funtion.php');
      <link rel="stylesheet" href="../css/index.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
      <title>Diary</title>
-     
+
 </head>
 
 <body>

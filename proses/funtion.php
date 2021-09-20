@@ -1,6 +1,5 @@
 <?php
 require('koneksi.php');
-//session_start();
 function query($query)
 {
      global $conn;
@@ -54,8 +53,8 @@ function tambah($data)
 {
      global $conn;
 
-     $username = //$_SESSION["username"];
-     $longname = //$_SESSION["longname"];
+     $username = "";
+     $longname = "";
      $tanggal_post = date("d/m/Y");
      $jam_post = date('h:i:s');
      $gambar_post = "logo.png"; //;

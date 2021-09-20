@@ -1,9 +1,5 @@
 <?php
 require('../proses/funtion.php');
-// if (!isset($_SESSION["login"])) {
-//      header("Location: masuk.php");
-//      exit;
-// }
 
 $post = query("SELECT * FROM user_post WHERE username = '" . $_SESSION["username"] . "'");
 
