@@ -1,5 +1,8 @@
 <?php
-require('koneksi.php');
+// koneksi database
+$conn = mysqli_connect("localhost", "muhamma8", "Azqilana@2906", "muhamma8_diary");
+
+//function
 function query($query)
 {
      global $conn;
@@ -77,22 +80,25 @@ function ubahpost($data)
 {
      global $conn;
 
-     $id = $data["id"];
+     $id = $data['id'];
      $username = htmlspecialchars($data["username"]);
      $tanggal_post = htmlspecialchars($data["tanggal_post"]);
      $jam_post = htmlspecialchars($data["jam_post"]);
      $post = htmlspecialchars($data["post"]);
 
      $query = "UPDATE user_post SET
-                    id = $id,
-				username = '$username',
-				tanggal_post = '$tanggal_post',
-                    jam_post = '$jam_post',
-				post = '$post',
+				'username'='$username',
+				'tanggal_post' = '$tanggal_post',
+                    'jam_post' = '$jam_post',
+				'post' = '$post',
 			  WHERE id = $id
 			";
-     // var_dump($query); die;
+     // var_dump($query);
+     // die();
      mysqli_query($conn, $query);
+     // var_dump($update);
+     // die();
+
 
      return mysqli_affected_rows($conn);
 }

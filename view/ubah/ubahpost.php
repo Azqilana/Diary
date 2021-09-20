@@ -10,22 +10,25 @@ $p = query("SELECT * FROM user_post WHERE id = $id")[0];
 
 // cek apakah tombol submit sudah ditekan atau belum
 if (isset($_POST["submit"])) {
-
+     // var_dump($_POST);
+     // die();
      // cek apakah data berhasil diubah atau tidak
      if (ubahpost($_POST) > 0) {
+          var_dump(ubahpost($_POST));
+          die();
           echo "
-			<script>
-				alert('data berhasil diubah!');
-				document.location.href = 'index.php';
-			</script>
-		";
+          	<script>
+          	alert('data berhasil diubah!');
+          		document.location.href = '../index.php';
+          	 </script>
+          ";
      } else {
           echo "
-			<script>
-				alert('data gagal diubah!');
-				document.location.href = 'index.php';
-			</script>
-		";
+     		<script>
+     			alert('data gagal diubah!');
+     			document.location.href = '';
+     		</script>
+     	";
      }
 }
 ?>
@@ -66,12 +69,14 @@ if (isset($_POST["submit"])) {
                               <div class="avatar"><img src="../img/azqilana2.jpg" alt="azqilana"></div>
                               <h4><?= $p['username']; ?></h4>
                               <ul>
-                                   <li><input type="hidden" name="id" value="<?= $p['id'] ?>">
+                                   <li>
+                                        <input type="hidden" name='id' value="<?= $p['id'] ?>">
+                                        <input type="hidden" name="username" value="<?= $p['username'] ?>">
+                                        <input type="hidden" name="jam_post" value="<?= $p['jam_post'] ?>">
                                         <input type="date" name="tanggal_post" id="tanggal_post" value="<?= $p['tanggal_post'] ?>" required readonly>
-                                        <a><?= $p['jam_post'] ?></a>
                                    </li>
                                    <li><textarea name="post" id="post" rows="5" required><?= $p['post'] ?></textarea></li>
-                                   <li><button type="submit">UPDATE</button></li>
+                                   <li><button type="submit" name="submit">UPDATE</button></li>
                               </ul>
                          </li>
                     </ul>

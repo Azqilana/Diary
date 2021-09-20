@@ -1,5 +1,5 @@
 <?php
-require('../proses/koneksi.php');
+require('../proses/funtion.php');
 
 
 if (isset($_POST["login"])) {
