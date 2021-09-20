@@ -84,6 +84,7 @@ function ubahpost($data)
      $post = htmlspecialchars($data["post"]);
 
      $query = "UPDATE user_post SET
+                    id = $id,
 				username = '$username',
 				tanggal_post = '$tanggal_post',
                     jam_post = '$jam_post',
