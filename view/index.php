@@ -5,7 +5,7 @@ if (!isset($_SESSION["login"])) {
      exit;
 }
 
-$post = query("SELECT * FROM user_post");
+$post = query("SELECT * FROM user_post WHERE username = '" . $_SESSION["username"] . "'");
 
 
 ?>

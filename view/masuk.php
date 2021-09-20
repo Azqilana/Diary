@@ -38,6 +38,11 @@ if (isset($_POST["login"])) {
           if (password_verify($password, $row["password"])) {
                // set session
                $_SESSION["login"] = true;
+               $_SESSION["username"]=$username;
+               $_SESSION["longname"] = $row["longname"];
+               
+
+               
 
                // cek remember me
                if (isset($_POST['remember'])) {
