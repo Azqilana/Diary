@@ -14,9 +14,10 @@ if (isset($_POST["login"])) {
 
           $row = mysqli_fetch_assoc($result);
           if (password_verify($password, $row["password"])) {
-
-               header("Location: index.php");
-               exit;
+               ob_start();
+               header('Location:index.php');
+               ob_end_flush();
+               die();
           }
      }
 
