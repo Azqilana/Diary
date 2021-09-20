@@ -1,5 +1,33 @@
 <?php
 require('../../proses/funtion.php');
+
+// ambil data di URL
+$id = $_GET["id"];
+
+// query data mahasiswa berdasarkan id
+$p = query("SELECT * FROM user_post WHERE id = $id")[0];
+
+
+// cek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
+
+     // cek apakah data berhasil diubah atau tidak
+     if (ubahpost($_POST) > 0) {
+          echo "
+			<script>
+				alert('data berhasil diubah!');
+				document.location.href = 'index.php';
+			</script>
+		";
+     } else {
+          echo "
+			<script>
+				alert('data gagal diubah!');
+				document.location.href = 'index.php';
+			</script>
+		";
+     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,9 +64,10 @@ require('../../proses/funtion.php');
                     <ul>
                          <li>
                               <div class="avatar"><img src="../img/azqilana2.jpg" alt="azqilana"></div>
-                              <h4>Muhammad Azqilana</h4>
+                              <h4><?= $p['username']; ?></h4>
                               <ul>
-                                   <li><textarea name="post" id="post" rows="5" required></textarea></li>
+                                   <li><input type="date" name="tanggal_post" id="tanggal_post" value="<?= $p['tanggal_post'] ?>" required readonly><a><?= $p['jam_post'] ?></a></li>
+                                   <li><textarea name="post" id="post" rows="5" required><?= $p['post'] ?></textarea></li>
                                    <li><button type="submit">UPDATE</button></li>
                               </ul>
                          </li>

@@ -52,7 +52,7 @@ function register($register)
 function tambah($data)
 {
      global $conn;
-     
+
      $username = "azqilana";
      $tanggal_post = date('Y-m-d');
      $jam_post = date('h:m:s');
@@ -71,6 +71,27 @@ function hapus($id)
 {
      global $conn;
      mysqli_query($conn, "DELETE FROM user_post WHERE id = $id");
-     
+     return mysqli_affected_rows($conn);
+}
+function ubahpost($data)
+{
+     global $conn;
+
+     $id = $data["id"];
+     $username = htmlspecialchars($data["username"]);
+     $tanggal_post = htmlspecialchars($data["tanggal_post"]);
+     $jam_post = htmlspecialchars($data["jam_post"]);
+     $post = htmlspecialchars($data["post"]);
+
+     $query = "UPDATE user_post SET
+				username = '$username',
+				tanggal_post = '$tanggal_post',
+                    jam_post = '$jam_post',
+				post = '$post',
+			  WHERE id = $id
+			";
+     // var_dump($query); die;
+     mysqli_query($conn, $query);
+
      return mysqli_affected_rows($conn);
 }
