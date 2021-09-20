@@ -1,7 +1,7 @@
 <?php
 require('../proses/funtion.php');
 
-$post = query("SELECT * FROM user_post WHERE username = '" . $_SESSION["username"] . "'");
+$post = query("SELECT * FROM user_post");
 
 
 // cek apakah tombol submit sudah ditekan atau belum
