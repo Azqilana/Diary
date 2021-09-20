@@ -44,11 +44,9 @@ CREATE TABLE `user_login` (
 
 CREATE TABLE `user_post` (
   `id` int(11) NOT NULL,
-  `longname` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
   `tanggal_post` int(12) NOT NULL,
   `jam_post` int(12) NOT NULL,
-  `gambar_post` varchar(255) NOT NULL,
   `post` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
