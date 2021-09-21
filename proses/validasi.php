@@ -70,9 +70,10 @@ function tambah($data)
 
      return mysqli_affected_rows($conn);
 }
-function hapus($id)
+function hapus($data)
 {
      global $conn;
+     $id = $data['id'];
      mysqli_query($conn, "DELETE FROM user_post WHERE id = $id");
      return mysqli_affected_rows($conn);
 }
@@ -86,5 +87,4 @@ function ubahpost($data)
 
      $result = mysqli_query($conn, $query);
      return $result;
-
 }

@@ -6,11 +6,11 @@ $post = query("SELECT * FROM user_post");
 
 // cek apakah tombol submit sudah ditekan atau belum
 if (isset($_POST["submit"])) {
-     
+
      // cek apakah data berhasil di tambahkan atau tidak
      if (tambah($_POST) > 0) {
-          var_dump(tambah($_POST));
-          die();
+          // var_dump(tambah($_POST));
+          // die();
           echo "
           		<script>
           			alert('data berhasil ditambahkan!');
@@ -77,11 +77,11 @@ if (isset($_POST["submit"])) {
                     <div class="navbar">
                          <ul>
                               <li><a class="fas fa-edit" href="ubah/ubahpost.php?id=<?= $p["id"]; ?>">Edit</a></li>
-                              <li><a class="fas fa-trash" href="">Hapus</a></li>
+                              <li><a class="fas fa-trash" href="hapus.php?id=<?= $p["id"]; ?>">Hapus</a></li>
                          </ul>
                     </div>
                     <?= $p['tanggal_post'] ?>
-                    <textarea name="post" id="post" rows="7" disabled readonly><?= $p['post'] ?></textarea>
+                    <fieldset><?= $p['post'] ?></fieldset>
                </div>
           <?php endforeach; ?>
      </main>

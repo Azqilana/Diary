@@ -116,6 +116,15 @@ textarea:focus{
      box-shadow: 1px 1px 1px 1px rgb(218, 208, 126);
      background-color: rgb(245, 245, 198);
 }
+.mypost .update{
+     font-size: 15px;
+     font-weight: bold;
+}
+.mypost .hapus{
+     font-size: 15px;
+     font-weight: bold;
+     background-color: red;
+}
 .post{
      display: flex;
      flex-direction:column ;
@@ -130,12 +139,13 @@ textarea:focus{
 .post h4{
      transform: translateX(9%);
 }
-.post textarea{
+.post fieldset{
      margin-top: 20px;
+     padding: 5px;
      resize: none;
-     border-radius: 10px;
+     border-radius: 5px;
      width: 100%;
-     border: none;
+     border:1px solid yellow ;
      font-size: medium;
 }
 .menu{
