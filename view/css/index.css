@@ -189,6 +189,9 @@ textarea:focus{
      padding:10px;
      text-overflow: clip;
 }
+textarea::-webkit-scrollbar {
+     border-radius: 5px;
+}
 
 .viewpost h4{
      transform: translateX(9%);

@@ -76,8 +76,8 @@ if (isset($_POST["submit"])) {
                <h4><?= $p['username']; ?></h4>
                <div class="navbar">
                     <ul>
-                         <li><a class="fas fa-edit" href="ubah/ubahpost.html">Edit</a></li>
-                         <li><a class="fas fa-trash" href="">Hapus</a></li>
+                         <li><a class="fas fa-edit" href="ubah/ubahpost.php?id=<?= $p['id']; ?>">Edit</a></li>
+                         <li><a class="fas fa-trash" href="hapus.php?id=<?= $p['id']; ?>">Hapus</a></li>
                     </ul>
                </div>
                <textarea name="post" id="post" rows="5" disabled="disabled" readonly="readonly"><?= $p['post']; ?></textarea>
