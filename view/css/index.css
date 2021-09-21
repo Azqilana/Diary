@@ -181,12 +181,12 @@ textarea:focus{
      margin: 2% 5%;
 }
 .viewpost textarea{
-     margin-top: 20px;
+     margin-top: 30px;
      resize: none;
      border-radius: 10px;
-     width: 100%;
-     padding: 25px;
+     width: 90%;
      border: 1px solid yellow;
+     padding:10px;
 }
 .viewpost h4{
      transform: translateX(9%);
