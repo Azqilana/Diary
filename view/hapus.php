@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
           	<script>
           	alert('data berhasil dihapus!');
           		document.location.href = 'index.php';
-          	 </script>
+          	</script>
           ";
      } else {
           echo "
@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
                                         <input type="date" name="tanggal_post" id="tanggal_post"
                                              value="<?= $p['tanggal_post'] ?>" required readonly>
                                    </li>
-                                   <li><textarea name="post" id="post" rows="5" required><?= $p['post'] ?></textarea>
+                                   <li><textarea name="post" id="post" rows="5" readonly><?= $p['post'] ?></textarea>
                                    </li>
                                    <li><button class="hapus" type="submit" name="submit">DELETE</button></li>
                               </ul>

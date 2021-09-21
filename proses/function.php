@@ -57,7 +57,7 @@ function tambah($data)
      global $conn;
 
      $username = "azqilana";
-     $tanggal_post = date('Y-m-d');
+     $tanggal_post =date('Y-m-d');
      $jam_post = date('h:m:s');
      $post = htmlspecialchars($data["post"]);
 

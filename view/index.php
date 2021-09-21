@@ -74,13 +74,15 @@ if (isset($_POST["submit"])) {
                <div class="viewpost">
                <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
                <h4><?= $p['username']; ?></h4>
+               <input type="date" name="tanggal_post" id="tanggal_post"
+               value="<?= $p['tanggal_post'] ?>" required readonly>
                <div class="navbar">
                     <ul>
                          <li><a class="fas fa-edit" href="ubah/ubahpost.php?id=<?= $p['id']; ?>">Edit</a></li>
                          <li><a class="fas fa-trash" href="hapus.php?id=<?= $p['id']; ?>">Hapus</a></li>
                     </ul>
                </div>
-               <textarea name="post" id="post" rows="5" disabled="disabled" readonly="readonly"><?= $p['post']; ?></textarea>
+               <textarea name="post" id="post" disabled="disabled" readonly="readonly"><?= $p['post']; ?></textarea>
           </div>
           <?php endforeach; ?>
      </main>
