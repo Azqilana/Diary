@@ -4,9 +4,9 @@ if( !isset($_SESSION["submit"]) ) {
 	header("Location: masuk.php");
 	exit;
 }
-
 $post = query("SELECT * FROM user_post WHERE username='".$_SESSION["username"]."'");
 $profil = query("SELECT * FROM user_profile WHERE username='".$_SESSION["username"]."'");
+
 
 
 if (isset($_POST["submit"])) {
