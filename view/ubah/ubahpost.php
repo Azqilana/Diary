@@ -1,5 +1,5 @@
 <?php
-require('../proses/function.php');
+require('../../proses/function.php');
 
 // ambil data di URL
 $id = $_GET["id"];
@@ -71,7 +71,7 @@ if (isset($_POST["submit"])) {
                                         <input type="hidden" name='id' value="<?= $p['id'] ?>">
                                         <input type="date" name="tanggal_post" id="tanggal_post" value="<?= $p['tanggal_post'] ?>" required readonly>
                                    </li>
-                                   <li><textarea name="post" id="post" rows="5" required><?= $p['post'] ?></textarea></li>
+                                   <li><textarea name="post" id="post" rows="5" required placeholder="Tulis Postingan Disini"><?= $p['post'] ?></textarea></li>
                                    <li><button class="update" type="submit" name="submit">UPDATE</button></li>
                               </ul>
                          </li>

@@ -125,29 +125,6 @@ textarea:focus{
      font-weight: bold;
      background-color: red;
 }
-.post{
-     display: flex;
-     flex-direction:column ;
-     user-select: none;
-     width: 50%;
-     box-shadow: 3px 3px 3px 3px rgb(218, 208, 126);
-     padding: 25px;
-     border: 1px solid yellow;
-     border-radius: 10px;
-     margin: 2% 5%;
-}
-.post h4{
-     transform: translateX(9%);
-}
-.post fieldset{
-     margin-top: 20px;
-     padding: 5px;
-     resize: none;
-     border-radius: 5px;
-     width: 100%;
-     border:1px solid yellow ;
-     font-size: medium;
-}
 .menu{
      position: absolute;
      display:inline;

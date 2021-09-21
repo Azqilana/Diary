@@ -39,19 +39,19 @@ if (isset($_POST["submit"])) {
                     </tr>
                     <tr>
                          <td><a class="fas fa-user"></a></td>
-                         <td><input type="text" name="longname" id="longname"></td>
+                         <td><input type="text" name="longname" id="longname" placeholder="longname"></td>
                     </tr>
                     <tr>
                          <td><a class="fas fa-at"></a></td>
-                         <td><input type="text" name="username" id="username"></td>
+                         <td><input type="text" name="username" id="username" placeholder="username"></td>
                     </tr>
                     <tr>
                          <td><a class="fas fa-envelope"></a></td>
-                         <td><input type="email" name="email" id="email"></td>
+                         <td><input type="email" name="email" id="email" placeholder="email"></td>
                     </tr>
                     <tr>
                          <td><a class="fas fa-lock"></a></td>
-                         <td><input type="password" name="password" id="password"></td>
+                         <td><input type="password" name="password" id="password" placeholder="password"></td>
                     </tr>
                     <tr>
                          <td colspan="2"><button type="submit" name="submit">Register</button></td>

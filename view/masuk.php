@@ -48,11 +48,11 @@ if (isset($_POST["submit"])) {
                     </tr>
                     <tr>
                          <td><a class="fas fa-at"></a></td>
-                         <td><input type="text" name="username" id="username"></td>
+                         <td><input type="text" name="username" id="username" placeholder="username"></td>
                     </tr>
                     <tr>
                          <td><a class="fas fa-lock"></a></td>
-                         <td><input type="password" name="password" id="password"></td>
+                         <td><input type="password" name="password" id="password" placeholder="password"></td>
                     </tr>
                     <tr>
                          <td colspan="2"><button type="submit" name="submit">Login</button></td>

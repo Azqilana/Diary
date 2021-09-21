@@ -71,18 +71,7 @@ if (isset($_POST["submit"])) {
                </form>
           </div>
           <?php foreach ($post as $p) : ?>
-               <div class="post">
-                    <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
-                    <h4><?= $p['username']; ?></h4>
-                    <div class="navbar">
-                         <ul>
-                              <li><a class="fas fa-edit" href="ubah/ubahpost.php?id=<?= $p["id"]; ?>">Edit</a></li>
-                              <li><a class="fas fa-trash" href="hapus.php?id=<?= $p["id"]; ?>">Hapus</a></li>
-                         </ul>
-                    </div>
-                    <?= $p['tanggal_post'] ?>
-                    <fieldset><?= $p['post'] ?></fieldset>
-               </div>
+             
           <?php endforeach; ?>
      </main>
 </body>

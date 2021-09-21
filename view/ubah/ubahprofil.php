@@ -1,5 +1,5 @@
 <?php
-require('../proses/function.php');
+require('../../proses/function.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,19 +53,19 @@ require('../proses/function.php');
                          </tr>
                          <tr>
                               <td><a class="fas fa-user">
-                              <td><input type="text" name="longname" id="longname" value="" required></td>
+                              <td><input type="text" name="longname" id="longname" placeholder="longname" value="" required></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-at"></a></td>
-                              <td><input type="text" name="username" id="username" value="" required></td>
+                              <td><input type="text" name="username" id="username" placeholder="username" value="" required></td>
                          </tr>
                          <tr>
                               <td><a class="far fa-envelope"></a></td>
-                              <td><input type="email" name="email" id="email" value="" required></td>
+                              <td><input type="email" name="email" id="email" placeholder="email@email.com" value="" required></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-mobile"></a></td>
-                              <td><input type="number" name="nomortelephon" id="nomortelephon" value="" required></td>
+                              <td><input type="number" name="nomortelephon" id="nomortelephon" placeholder="0812345678910" value="" required></td>
                          </tr>
                          <tr>
                               <td colspan="2"><button type="submit">Update</button></td>
@@ -87,15 +87,15 @@ require('../proses/function.php');
                          </tr>
                          <tr>
                               <td><a class="fas fa-map-marker-alt"></a></td>
-                              <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" value=""></td>
+                              <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" placeholder="Alamat" value=""></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-building"></a></td>
-                              <td><input type="text" name="pekerjaan" id="pekerjaan" value=""></td>
+                              <td><input type="text" name="pekerjaan" id="pekerjaan" placeholder="pekerjaan" value=""></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-user-graduate"></a></td>
-                              <td><input type="text" name="sekolah" id="sekolah" value=""></td>
+                              <td><input type="text" name="sekolah" id="sekolah" placeholder="sekolah" value=""></td>
                          </tr>
                          <tr>
                               <td colspan="2"><button type="submit">Update</button></td>
@@ -108,13 +108,13 @@ require('../proses/function.php');
                               <th>Update Password</th>
                          </tr>
                          <tr>
-                              <td><input type="password" name="" id=""></td>
+                              <td><input type="password" name="" placeholder="password lama" id=""></td>
                          </tr>
                          <tr>
-                              <td><input type="password" name="" id=""></td>
+                              <td><input type="password" name="" placeholder="password baru" id=""></td>
                          </tr>
                          <tr>
-                              <td><input type="password" name="" id=""></td>
+                              <td><input type="password" name="" placeholder="ulang password baru" id=""></td>
                          </tr>
                          <tr>
                               <td><button type="submit">Update</button></td>
