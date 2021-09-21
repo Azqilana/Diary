@@ -1,6 +1,18 @@
 <?php
-require('../proses/aksi.php');
+require('../proses/function.php');
+// cek apakah tombol submit sudah ditekan atau belum
+if (isset($_POST["submit"])) {
 
+     // fitur daftar
+
+     if (register($_POST) > 0) {
+          echo "<script> 
+               alert(' Selamat Berhasil Mendaftar Akun');</script>";
+     } else {
+          echo mysqli_error($conn);
+     }
+     //selesai daftar
+}
 ?>
 
 <!DOCTYPE html>

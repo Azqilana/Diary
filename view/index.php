@@ -1,8 +1,31 @@
 <?php
-require('../proses/aksi.php');
+require('../proses/function.php');
 
 $post = query("SELECT * FROM user_post");
 
+if (isset($_POST["submit"])) {
+     //fitur tambah postingan 
+
+     // cek apakah data berhasil di tambahkan atau tidak
+     if (tambah($_POST) > 0) {
+          // var_dump(tambah($_POST));
+          // die();
+          echo "
+                         <script>
+                              alert('data berhasil ditambahkan!');
+                              document.location.href = 'index.php';
+                         </script>
+                    ";
+     } else {
+          echo "
+                         <script>
+                              alert('data gagal ditambahkan!');
+                              document.location.href = 'index.php';
+                         </script>
+                    ";
+     }
+     //selesai tambah postingan
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

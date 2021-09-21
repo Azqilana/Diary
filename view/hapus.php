@@ -1,11 +1,32 @@
 <?php
-require('../proses/aksi.php');
+require('../proses/function.php');
 
 // ambil data di URL
 $id = $_GET["id"];
 
 // query data mahasiswa berdasarkan id
 $p = query("SELECT * FROM user_post WHERE id = $id")[0];
+if (isset($_POST["submit"])) {
+     // fitur hapus
+     if (hapus($_POST) > 0) {
+          // var_dump(ubahpost($_POST));
+          // die();
+          echo "
+          	<script>
+          	alert('data berhasil dihapus!');
+          		document.location.href = 'index.php';
+          	 </script>
+          ";
+     } else {
+          echo "
+     		<script>
+     			alert('data gagal dihapus!');
+     			document.location.href = '';
+     		</script>
+     	";
+     }
+     // selesai hapus
+}
 
 ?>
 <!DOCTYPE html>

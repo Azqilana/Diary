@@ -1,12 +1,33 @@
 <?php
-require('../proses/aksi.php');
+require('../proses/function.php');
 
 // ambil data di URL
 $id = $_GET["id"];
 
 // query data post berdasarkan id
 $p = query("SELECT * FROM user_post WHERE id = $id")[0];
-
+if (isset($_POST["submit"])) {
+     //fitur ubah postingan
+     // cek apakah data berhasil diubah atau tidak
+     if (ubahpost($_POST) > 0) {
+          // var_dump(ubahpost($_POST));
+          // die();
+          echo "
+                    <script>
+                    alert('data berhasil diubah!');
+                         document.location.href = '../index.php';
+                    </script>
+               ";
+     } else {
+          echo "
+                    <script>
+                         alert('data gagal diubah!');
+                         document.location.href = '';
+                    </script>
+               ";
+     }
+     //selesai ubah postingan
+}
 
 ?>
 <!DOCTYPE html>
