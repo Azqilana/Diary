@@ -1,5 +1,5 @@
 <?php
-require('../../proses/funtion.php');
+require('../proses/function.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

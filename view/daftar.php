@@ -1,5 +1,5 @@
 <?php
-require("../proses/funtion.php");
+require('../proses/function.php');
 
 if (isset($_POST["submit"])) {
      if (register($_POST) > 0) {

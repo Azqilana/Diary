@@ -1,5 +1,5 @@
 <?php
-require('../../proses/funtion.php');
+require('../proses/function.php');
 
 // ambil data di URL
 $id = $_GET["id"];
