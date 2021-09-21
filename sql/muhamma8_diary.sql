@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 19 Sep 2021 pada 13.55
--- Versi server: 10.3.31-MariaDB-cll-lve
--- Versi PHP: 7.3.30
+-- Waktu pembuatan: 21 Sep 2021 pada 00.30
+-- Versi server: 5.7.33
+-- Versi PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,7 +32,7 @@ CREATE TABLE `user_login` (
   `longname` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(2555) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -45,8 +44,8 @@ CREATE TABLE `user_login` (
 CREATE TABLE `user_post` (
   `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `tanggal_post` int(12) NOT NULL,
-  `jam_post` int(12) NOT NULL,
+  `tanggal_post` varchar(12) NOT NULL,
+  `jam_post` varchar(12) NOT NULL,
   `post` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
