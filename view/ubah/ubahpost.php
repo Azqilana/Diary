@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
           <nav>
                <ul>
                     <li><a class="fas fa-home" href="../index.php"> Beranda </a></li>
-                    <li><a class="fas fa-user" href="../profil.php"> Profil </a></li>
+                    <!-- <li><a class="fas fa-user" href="../profil.php"> Profil </a></li> -->
                     <li><a class="fas fa-sign-out-alt" href="../logout.php"> Keluar </a></li>
                </ul>
                <div class="menu-toggle">
