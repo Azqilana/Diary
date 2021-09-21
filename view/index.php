@@ -80,7 +80,7 @@ if (isset($_POST["submit"])) {
                          <li><a class="fas fa-trash" href="">Hapus</a></li>
                     </ul>
                </div>
-               <textarea name="post" id="post" rows="5" disabled readonly><?= $p['post']; ?></textarea>
+               <textarea name="post" id="post" rows="5" disabled="disabled" readonly="readonly"><?= $p['post']; ?></textarea>
           </div>
           <?php endforeach; ?>
      </main>

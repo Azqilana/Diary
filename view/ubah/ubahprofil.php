@@ -121,34 +121,6 @@ require('../../proses/function.php');
                          </tr>
                     </table>
                </form>
-               <form class="updatesosmed" action="" method="post">
-                    <table>
-                         <tr>
-                              <th>Sosial Media</th>
-                         </tr>
-                         <tr>
-                              <td><select name="sosmed" id="sosmed">
-                                        <option value="facebook">Facebook</option>
-                                        <option value="instagram">Instagram</option>
-                                        <option value="tiktok">Tiktok</option>
-                                        <option value="twitter">Twitter</option>
-                                        <option value="linkedin">Linkedin</option>
-                                        <option value="whatsapp">Whatsapp</option>
-                                        <option value="telegram">Telegram</option>
-                                        <option value="youtube">Youtube</option>
-                                        <option value="twitch">Twitch</option>
-                                        <option value="discord">Discord</option>
-                                   </select></td>
-                         </tr>
-                         <tr>
-                              <td><input type="url" name="link-sosmed" id="link-sosmed" placeholder="www.facebook.com">
-                              </td>
-                         </tr>
-                         <tr>
-                              <td><button type="submit">Update</button></td>
-                         </tr>
-                    </table>
-               </form>
           </div>
      </main>
 </body>

@@ -187,7 +187,9 @@ textarea:focus{
      width: 90%;
      border: 1px solid yellow;
      padding:10px;
+     text-overflow: clip;
 }
+
 .viewpost h4{
      transform: translateX(9%);
 }
