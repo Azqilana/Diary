@@ -63,8 +63,7 @@ function tambah($data)
 
 
      $query = "INSERT INTO user_post
-				VALUES
-			  (null,'$username', '$tanggal_post', '$jam_post','$post')
+				VALUES(null,'$username', '$tanggal_post', '$jam_post','$post')
 			";
      mysqli_query($conn, $query);
 
