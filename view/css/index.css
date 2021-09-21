@@ -71,9 +71,9 @@ ul li a{
      color:rgb(8, 8, 8);
 }
 nav ul.slide{
-      transform: translateY(31%);
-      opacity: 1;
-      transition: 1s;
+     transform: translateY(31%);
+     opacity: 1;
+     transition: 1s;
 }
 main{
      display: grid;
@@ -185,7 +185,7 @@ textarea:focus{
      resize: none;
      border-radius: 10px;
      width: 100%;
-     height: 1000px;
+     height: 100%;
      border: none;
 }
 .viewpost h4{
@@ -222,10 +222,10 @@ textarea:focus{
      }
 }
 @media screen and (max-width:500px){
-      .menu-toggle h4{
+     .menu-toggle h4{
      transform: translateX(14%);
      }
-      .post h4{
+     .post h4{
      transform: translateX(18%);
      }
      .viewpost h4{
@@ -265,7 +265,7 @@ textarea:focus{
      .post .navbar {
      margin-left: 70%;
      }
-      .navbar ul{
+     .navbar ul{
      margin-left:-70%;
      margin-top: -50%;
      }
@@ -273,7 +273,7 @@ textarea:focus{
 }
 @media screen and (max-width: 375px) {
 
- .navbar ul{
+.navbar ul{
      margin-left:-75%;
      margin-top: -50%;
      }
@@ -281,7 +281,7 @@ textarea:focus{
 }
 @media screen and (max-width: 320px) {
 
- .navbar ul{
+.navbar ul{
      margin-left:-80%;
      }
 

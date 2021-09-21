@@ -38,10 +38,6 @@ require('../proses/function.php');
                          <li><a class="fas fa-edit" href="ubah/ubahpost.html">Edit</a></li>
                          <li><a class="fas fa-trash" href="">Hapus</a></li>
                     </ul>
-                    <div class="menu-post">
-                         <input type="checkbox">
-                         <a class="fas fa-ellipsis-v"></a>
-                    </div>
                </div>
                <textarea name="post" id="post" disabled readonly></textarea>
           </div>
