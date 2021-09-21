@@ -1,11 +1,13 @@
 <?php
 require('../proses/function.php');
-if( !isset($_SESSION["login"]) ) {
+if( !isset($_SESSION["submit"]) ) {
 	header("Location: masuk.php");
 	exit;
 }
 
-$post = query("SELECT * FROM user_post");
+$post = query("SELECT * FROM user_post WHERE username='".$_SESSION["username"]."'");
+$profil = query("SELECT * FROM user_profile WHERE username='".$_SESSION["username"]."'");
+
 
 if (isset($_POST["submit"])) {
      //fitur tambah postingan 
@@ -31,6 +33,7 @@ if (isset($_POST["submit"])) {
      //selesai tambah postingan
 }
 ?>
+     <?php foreach ($profil as $pro) : ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,8 +57,8 @@ if (isset($_POST["submit"])) {
                </ul>
                <div class="menu-toggle">
                     <input type="checkbox">
-                    <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
-                    <h4>Muhammad Azqilana</h4>
+                    <div class="avatar"><img src="img/<?= $pro['gambar'] ?>" alt="azqilana"></div>
+                    <h4><?= $pro['longname'] ?></h4>
                </div>
           </nav>
      </header>
@@ -64,8 +67,8 @@ if (isset($_POST["submit"])) {
                <form action="" method="post">
                     <ul>
                          <li>
-                              <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
-                              <h4>Muhammad Azqilana</h4>
+                              <div class="avatar"><img src="img/<?= $pro['gambar'] ?>"alt="azqilana"></div>
+                              <h4><?= $pro['longname'] ?></h4>
                               <ul>
                                    <li><textarea name="post" id="post" rows="5" required></textarea></li>
                                    <li><button type="submit" name="submit">POST</button></li>
@@ -76,7 +79,7 @@ if (isset($_POST["submit"])) {
           </div>
           <?php foreach ($post as $p) : ?>
                <div class="viewpost">
-               <div class="avatar"><img src="img/azqilana2.jpg" alt="azqilana"></div>
+               <div class="avatar"><img src="img/<?= $pro['gambar'] ?>" alt="azqilana"></div>
                <h4><?= $p['username']; ?></h4>
                <input type="date" name="tanggal_post" id="tanggal_post"
                value="<?= $p['tanggal_post'] ?>" required readonly>
@@ -94,3 +97,4 @@ if (isset($_POST["submit"])) {
 <script src="js/script.js"></script>
 
 </html>
+<?php endforeach; ?>

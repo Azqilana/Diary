@@ -1,20 +1,16 @@
 <?php
 require('../proses/function.php');
-
-
-if( isset($_SESSION["login"]) ) {
+if( isset($_SESSION["submit"]) ) {
 	header("Location: index.php");
 	exit;
 }
 
-require 'functions.php';
-
-if( isset($_POST["login"]) ) {
+if( isset($_POST["submit"]) ) {
 
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
-	$result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+	$result = mysqli_query($conn, "SELECT * FROM user_login WHERE username = '$username'");
 
 	// cek username
 	if( mysqli_num_rows($result) === 1 ) {
@@ -23,7 +19,9 @@ if( isset($_POST["login"]) ) {
 		$row = mysqli_fetch_assoc($result);
 		if( password_verify($password, $row["password"]) ) {
 			// set session
-			$_SESSION["login"] = true;
+			$_SESSION["submit"] = true;
+			$_SESSION["username"] = $username;
+
 
 			header("Location: index.php");
 			exit;
@@ -34,7 +32,6 @@ if( isset($_POST["login"]) ) {
 
 }
 
-?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
