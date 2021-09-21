@@ -1,5 +1,5 @@
 <?php
-require('../proses/function.php');
+require('../proses/aksi.php');
 
 // ambil data di URL
 $id = $_GET["id"];
@@ -7,30 +7,6 @@ $id = $_GET["id"];
 // query data mahasiswa berdasarkan id
 $p = query("SELECT * FROM user_post WHERE id = $id")[0];
 
-
-// cek apakah tombol submit sudah ditekan atau belum
-if (isset($_POST["submit"])) {
-     // var_dump($_POST);
-     // die();
-     // cek apakah data berhasil diubah atau tidak
-     if (hapus($_POST) > 0) {
-          // var_dump(ubahpost($_POST));
-          // die();
-          echo "
-          	<script>
-          	alert('data berhasil dihapus!');
-          		document.location.href = 'index.php';
-          	 </script>
-          ";
-     } else {
-          echo "
-     		<script>
-     			alert('data gagal dihapus!');
-     			document.location.href = '';
-     		</script>
-     	";
-     }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">

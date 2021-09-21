@@ -1,28 +1,5 @@
 <?php
-require('../proses/function.php');
-
-
-if (isset($_POST["login"])) {
-
-     $username = $_POST["username"];
-     $password = $_POST["password"];
-
-     $result = mysqli_query($conn, "SELECT * FROM user_login WHERE username = '$username'");
-
-     // cek username
-     if (mysqli_num_rows($result) === 1) {
-
-          $row = mysqli_fetch_assoc($result);
-          if (password_verify($password, $row["password"])) {
-               ob_start();
-               header('Location:index.php');
-               ob_end_flush();
-               die();
-          }
-     }
-
-     $error = true;
-}
+require('../proses/aksi.php');
 
 ?>
 <!DOCTYPE html>
@@ -56,7 +33,7 @@ if (isset($_POST["login"])) {
                          <td><input type="password" name="password" id="password"></td>
                     </tr>
                     <tr>
-                         <td colspan="2"><button type="submit" name="login">Login</button></td>
+                         <td colspan="2"><button type="submit" name="submit">Login</button></td>
                     </tr>
                     <tr>
                          <td colspan="2"><a>Don't Have an Account?<a href="daftar.php">Let's Register</a></a></td>
