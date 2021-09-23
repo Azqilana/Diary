@@ -151,7 +151,7 @@ function ubahpost($data)
      $result = mysqli_query($conn, "UPDATE user_post SET post = '$post',
                                    gambar = '$gambar' WHERE id = $id");
      // var_dump($result);
-     die();
+     // die();
      return $result;
      
 }
