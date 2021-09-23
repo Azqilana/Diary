@@ -21,7 +21,6 @@ if (isset($_POST["submit"])) {
                     </script>
                ";
      } else {
-          die();
           echo "
                     <script>
                          alert('data gagal diubah!');
@@ -30,7 +29,6 @@ if (isset($_POST["submit"])) {
                ";
      }
      //selesai ubah postingan
-     die();
 }
 
 ?>

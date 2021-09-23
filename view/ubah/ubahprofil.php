@@ -7,62 +7,46 @@ $profil = query("SELECT * FROM user_profile WHERE username='".$_SESSION["usernam
 if (isset($_POST["updategambar"])) {
      if (ubahgambar($_POST) > 0) {
           // var_dump(ubahpost($_POST));
-          echo "
-                    <script>
-                    alert('data berhasil diubah!');
-                         document.location.href = '';
-                    </script>
-               ";
+          header('Location:ubahprofil.php?s=b');
      } else {
-          echo "
-                    <script>
-                         alert('data gagal diubah!');
-                         document.location.href = '../../proses/function.php';
-                    </script>
-               ";
+          header('Location:ubahprofil.php?s=g');
      }
      //selesai ubah postingan
-     die();
 }
 if (isset($_POST["uds"])) {
      if (ubahdataumum($_POST) > 0) {
           // var_dump(ubahpost($_POST));
-          echo "
-                    <script>
-                    alert('data berhasil diubah!');
-                         document.location.href = '';
-                    </script>
-               ";
+          // var_dump(ubahpost($_POST));
+          header('Location:ubahprofil.php?s=b');
      } else {
-          echo "
-                    <script>
-                         alert('data gagal diubah!');
-                         document.location.href = '../../proses/function.php';
-                    </script>
-               ";
+          header('Location:ubahprofil.php?s=g');
      }
      //selesai ubah postingan
-     die();
 }
 if (isset($_POST['udd'])) {
      if (ubahdatatambahan($_POST) > 0) {
           // var_dump(ubahpost($_POST));
-          echo "
-                    <script>
-                    alert('data berhasil diubah!');
-                         document.location.href = '';
-                    </script>
-               ";
+          // var_dump(ubahpost($_POST));
+          header('Location:ubahprofil.php?s=b');
      } else {
-          echo "
-                    <script>
-                         alert('data gagal diubah!');
-                         document.location.href = '../../proses/function.php';
-                    </script>
-               ";
+          header('Location:ubahprofil.php?s=g');
      }
      //selesai ubah postingan
-     die();
+}
+$_GET['s'];
+if($_GET['s']==='b'){
+     echo "
+     <script>
+     alert('data berhasil diubah!');
+     </script>
+";
+}
+if($_GET['s']==='g'){
+     echo "
+     <script>
+     alert('data gagal diubah!');
+     </script>
+";
 }
 
 ?>
