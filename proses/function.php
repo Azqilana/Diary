@@ -145,12 +145,13 @@ function ubahpost($data)
 	} else {
 		$gambar = ubahupload();
 	}
-          var_dump($gambar);
-          die();
+          // var_dump($gambar);
+          // die();
 
-     $result = mysqli_query($conn, "UPDATE user_post SET post = '$post' gambar = '$gambar' WHERE id = $id");
+     $result = mysqli_query($conn, "UPDATE user_post SET post = '$post',
+                                   gambar = '$gambar' WHERE id = $id");
      // var_dump($result);
-     // die();
+     die();
      return $result;
      
 }
@@ -192,7 +193,7 @@ $namaFilebaru .= '.';
 $namaFilebaru .= $extgambar;
 
 move_uploaded_file($tmpName, '../img/' . $namaFilebaru);
-var_dump($namaFilebaru);
+// var_dump($namaFilebaru);
 
 return $namaFilebaru;
 
