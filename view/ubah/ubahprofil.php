@@ -1,11 +1,9 @@
 <?php
 require('../../proses/function.php');
 
-// ambil data di URL
-$id = $_GET["id"];
-
 // query data post berdasarkan id
-$profil = query("SELECT * FROM user_profile WHERE id = $id")[0];
+
+$profil = query("SELECT * FROM user_profile WHERE username='".$_SESSION["username"]."'");
 if (isset($_POST["submit"])) {
      // var_dump($_POST);
      // var_dump($_FILES);
