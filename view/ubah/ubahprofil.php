@@ -4,22 +4,16 @@ require('../../proses/function.php');
 // query data post berdasarkan id
 
 $profil = query("SELECT * FROM user_profile WHERE username='".$_SESSION["username"]."'");
-if (isset($_POST["submit"])) {
-     // var_dump($_POST);
-     // var_dump($_FILES);
-
-     //fitur ubah postingan
-     // cek apakah data berhasil diubah atau tidak
-     if (ubahpost($_POST) > 0) {
+if (isset($_POST["updategambar"])) {
+     if (ubahgambar($_POST) > 0) {
           // var_dump(ubahpost($_POST));
           echo "
                     <script>
                     alert('data berhasil diubah!');
-                         document.location.href = '../index.php';
+                         document.location.href = '';
                     </script>
                ";
      } else {
-          die();
           echo "
                     <script>
                          alert('data gagal diubah!');
@@ -30,6 +24,47 @@ if (isset($_POST["submit"])) {
      //selesai ubah postingan
      die();
 }
+if (isset($_POST["uds"])) {
+     if (ubahdataumum($_POST) > 0) {
+          // var_dump(ubahpost($_POST));
+          echo "
+                    <script>
+                    alert('data berhasil diubah!');
+                         document.location.href = '';
+                    </script>
+               ";
+     } else {
+          echo "
+                    <script>
+                         alert('data gagal diubah!');
+                         document.location.href = '../../proses/function.php';
+                    </script>
+               ";
+     }
+     //selesai ubah postingan
+     die();
+}
+if (isset($_POST['udd'])) {
+     if (ubahdatatambahan($_POST) > 0) {
+          // var_dump(ubahpost($_POST));
+          echo "
+                    <script>
+                    alert('data berhasil diubah!');
+                         document.location.href = '';
+                    </script>
+               ";
+     } else {
+          echo "
+                    <script>
+                         alert('data gagal diubah!');
+                         document.location.href = '../../proses/function.php';
+                    </script>
+               ";
+     }
+     //selesai ubah postingan
+     die();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,10 +103,14 @@ if (isset($_POST["submit"])) {
                     <form action="" method="post" enctype="multipart/form-data">
                          <table>
                               <tr>
+                              <td><input type="hidden" name="id" value="<?= $pro['id'] ?>"></td>
+                              <td><input type="hidden" name="gambarlama" value="<?= $pro['gambar'] ?>"></td>
+                              </tr>
+                              <tr>
                                    <td><input type="file" name="gambar" id="gambar"></td>
                               </tr>
                               <tr>
-                                   <td><button type="submit">Update</button></td>
+                                   <td><button type="submit" name="updategambar">Update</button></td>
                               </tr>
                          </table>
                     </form>
@@ -80,6 +119,9 @@ if (isset($_POST["submit"])) {
                     <table>
                          <tr>
                               <th colspan="2">Data Umum</th>
+                         </tr>
+                         <tr>
+                         <td><input type="hidden" name="id" value="<?= $pro['id'] ?>"></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-user">
@@ -98,7 +140,7 @@ if (isset($_POST["submit"])) {
                               <td><input type="number" name="nomortelephon" id="nomortelephon" placeholder="0812345678910" value="<?= $pro['nomortelephon'] ?>" required></td>
                          </tr>
                          <tr>
-                              <td colspan="2"><button type="submit">Update</button></td>
+                              <td colspan="2"><button type="submit" name="uds">Update</button></td>
                          </tr>
                     </table>
                </form>
@@ -106,6 +148,9 @@ if (isset($_POST["submit"])) {
                     <table>
                          <tr>
                               <th colspan="2">Data Tambahan</th>
+                         </tr>
+                         <tr>
+                         <td><input type="hidden" name="id" value="<?= $pro['id'] ?>"></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-birthday-cake"></a></td>
@@ -128,7 +173,7 @@ if (isset($_POST["submit"])) {
                               <td><input type="text" name="sekolah" id="sekolah" placeholder="sekolah" value="<?= $pro['sekolah'] ?>"></td>
                          </tr>
                          <tr>
-                              <td colspan="2"><button type="submit">Update</button></td>
+                              <td colspan="2"><button type="submit" name="udd">Update</button></td>
                          </tr>
                     </table>
                </form>
@@ -136,6 +181,9 @@ if (isset($_POST["submit"])) {
                     <table>
                          <tr>
                               <th>Update Password</th>
+                         </tr>
+                         <tr>
+                         <td><input type="hidden" name="id" value="<?= $pro['id'] ?>"></td>
                          </tr>
                          <tr>
                               <td><input type="password" name="" placeholder="password lama" id=""></td>
@@ -147,7 +195,7 @@ if (isset($_POST["submit"])) {
                               <td><input type="password" name="" placeholder="ulang password baru" id=""></td>
                          </tr>
                          <tr>
-                              <td><button type="submit">Update</button></td>
+                              <td><button type="submit" name="submit">Update</button></td>
                          </tr>
                     </table>
                </form>

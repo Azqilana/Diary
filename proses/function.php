@@ -157,6 +157,71 @@ function ubahpost($data)
      return $result;
 
 }
+function ubahgambar($data)
+{
+     global $conn;
+
+     $id = $data['id'];
+     $gambarLama = $data["gambarlama"];
+     if( $_FILES['gambar']['error'] === 4 ) {
+		$gambar = $gambarLama;
+	} else {
+		$gambar = upload();
+          move_uploaded_file($_FILES['gambar']['tmp_name'], '../img/' . $gambar);
+	}
+          // var_dump($gambar);
+          // die();
+
+     $result = mysqli_query($conn, "UPDATE user_profile SET 
+                                   gambar = '$gambar' WHERE id = $id");
+     // var_dump($result);
+     // die();
+     return $result;
+
+}
+function ubahdataumum($data){
+     global $conn;
+
+     $id = $data['id'];
+     $longname = htmlspecialchars($data['longname']);
+     $username = htmlspecialchars($data['username']);
+     $email = htmlspecialchars($data['email']);
+     $nomortelephon = htmlspecialchars($data['nomortelephon']);
+     
+
+     $result = mysqli_query($conn, "UPDATE user_profile SET  
+                         longname = '$longname', 
+                         username = '$username', 
+                         email = '$email', 
+                         nomortelephon = '$nomortelephon' 
+                                   WHERE id = $id");
+     // var_dump($result);
+     // die();
+     return $result;
+}
+function ubahdatatambahan($data){
+     global $conn;
+
+     $id = $data['id'];
+     $tanggal_lahir = htmlspecialchars($data['tanggal_lahir']);
+     $jenis_kelamin = htmlspecialchars($data['jenis_kelamin']);
+     $tempat_tinggal = htmlspecialchars($data['tempat_tinggal']);
+     $pekerjaan = htmlspecialchars($data['pekerjaan']);
+     $sekolah = htmlspecialchars($data['sekolah']);
+     
+
+     $result = mysqli_query($conn, "UPDATE user_profile SET  
+                         tanggal_lahir = '$tanggal_lahir', 
+                         jenis_kelamin = '$jenis_kelamin', 
+                         tempat_tinggal = '$tempat_tinggal', 
+                         pekerjaan = '$pekerjaan', 
+                         sekolah = '$sekolah' 
+                                   WHERE id = $id");
+     // var_dump($result);
+     // die();
+     return $result;
+}
+
 
 
 
