@@ -7,11 +7,13 @@ $id = $_GET["id"];
 // query data post berdasarkan id
 $p = query("SELECT * FROM user_post WHERE id = $id")[0];
 if (isset($_POST["submit"])) {
+     var_dump($_POST);
+     var_dump($_FILES);
+
      //fitur ubah postingan
      // cek apakah data berhasil diubah atau tidak
      if (ubahpost($_POST) > 0) {
           // var_dump(ubahpost($_POST));
-          // die();
           echo "
                     <script>
                     alert('data berhasil diubah!');
@@ -19,14 +21,16 @@ if (isset($_POST["submit"])) {
                     </script>
                ";
      } else {
+          die();
           echo "
                     <script>
                          alert('data gagal diubah!');
-                         document.location.href = '';
+                         document.location.href = '../../proses/function.php';
                     </script>
                ";
      }
      //selesai ubah postingan
+     die();
 }
 
 ?>
@@ -61,7 +65,7 @@ if (isset($_POST["submit"])) {
      </header>
      <main>
           <div class="mypost">
-               <form action="" method="post">
+               <form action="" method="post" enctype="multipart/form-data">
                     <ul>
                          <li>
                               <div class="avatar"><img src="../img/azqilana2.jpg" alt="azqilana"></div>
@@ -69,9 +73,12 @@ if (isset($_POST["submit"])) {
                               <ul>
                                    <li>
                                         <input type="hidden" name='id' value="<?= $p['id'] ?>">
+                                        <input type="hidden" name="gambarLama" value="<?= $p["gambar"]; ?>">
                                         <input type="date" name="tanggal_post" id="tanggal_post" value="<?= $p['tanggal_post'] ?>" required readonly>
                                    </li>
+                                   <li><input type="file" name="gambar" id="gambar"></li>
                                    <li><textarea name="post" id="post" rows="5" required placeholder="Tulis Postingan Disini"><?= $p['post'] ?></textarea></li>
+                                   <li><img src="../img/<?= $p['gambar'] ?>" alt=""></li>
                                    <li><button class="update" type="submit" name="submit">UPDATE</button></li>
                               </ul>
                          </li>

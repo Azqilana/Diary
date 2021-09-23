@@ -9,9 +9,12 @@ $profil = query("SELECT * FROM user_profile WHERE username='".$_SESSION["usernam
 
 
 
+
 if (isset($_POST["submit"])) {
      //fitur tambah postingan 
-
+     // var_dump($_POST);
+     // var_dump($_FILES);
+     //      die();
      // cek apakah data berhasil di tambahkan atau tidak
      if (tambah($_POST) > 0) {
           // var_dump(tambah($_POST));
@@ -52,7 +55,7 @@ if (isset($_POST["submit"])) {
           <nav>
                <ul>
                     <li><a class="fas fa-home" href="index.php"> Beranda </a></li>
-                    <!-- <li><a class="fas fa-user" href="profil.php"> Profil </a></li> -->
+                    <li><a class="fas fa-user" href="profil.php"> Profil </a></li>
                     <li><a class="fas fa-sign-out-alt" href="logout.php"> Keluar </a></li>
                </ul>
                <div class="menu-toggle">
@@ -64,12 +67,13 @@ if (isset($_POST["submit"])) {
      </header>
      <main>
           <div class="mypost">
-               <form action="" method="post">
+               <form action="" method="post" enctype="multipart/form-data">
                     <ul>
                          <li>
                               <div class="avatar"><img src="img/<?= $pro['gambar'] ?>"alt="azqilana"></div>
                               <h4><?= $pro['longname'] ?></h4>
                               <ul>
+                                   <li><input type="file" name="gambar" id="gambar"></li>
                                    <li><textarea name="post" id="post" rows="5" required></textarea></li>
                                    <li><button type="submit" name="submit">POST</button></li>
                               </ul>
@@ -90,6 +94,7 @@ if (isset($_POST["submit"])) {
                     </ul>
                </div>
                <textarea name="post" id="post" disabled="disabled" readonly="readonly"><?= $p['post']; ?></textarea>
+               <img src="img/<?= $p['gambar']; ?>" alt="">
           </div>
           <?php endforeach; ?>
      </main>
