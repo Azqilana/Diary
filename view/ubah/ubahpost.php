@@ -7,8 +7,8 @@ $id = $_GET["id"];
 // query data post berdasarkan id
 $p = query("SELECT * FROM user_post WHERE id = $id")[0];
 if (isset($_POST["submit"])) {
-     var_dump($_POST);
-     var_dump($_FILES);
+     // var_dump($_POST);
+     // var_dump($_FILES);
 
      //fitur ubah postingan
      // cek apakah data berhasil diubah atau tidak

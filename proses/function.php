@@ -146,11 +146,11 @@ function ubahpost($data)
 		$gambar = ubahupload();
 	}
           var_dump($gambar);
-     
+          die();
 
      $result = mysqli_query($conn, "UPDATE user_post SET post = '$post' gambar = '$gambar' WHERE id = $id");
-     var_dump($result);
-     die();
+     // var_dump($result);
+     // die();
      return $result;
      
 }
@@ -168,7 +168,7 @@ function ubahupload(){
      $extgambar = strtolower(end($extgambar));
 
      if (!in_array($extgambar ,$extgambarvalid)) {
-          die();
+          // die();
           echo "
           <script>
                alert('yang boleh hanya gambar! jangan jangan jahil ya');
