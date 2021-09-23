@@ -1,5 +1,37 @@
 <?php
 require('../../proses/function.php');
+
+// ambil data di URL
+$id = $_GET["id"];
+
+// query data post berdasarkan id
+$profil = query("SELECT * FROM user_profile WHERE id = $id")[0];
+if (isset($_POST["submit"])) {
+     // var_dump($_POST);
+     // var_dump($_FILES);
+
+     //fitur ubah postingan
+     // cek apakah data berhasil diubah atau tidak
+     if (ubahpost($_POST) > 0) {
+          // var_dump(ubahpost($_POST));
+          echo "
+                    <script>
+                    alert('data berhasil diubah!');
+                         document.location.href = '../index.php';
+                    </script>
+               ";
+     } else {
+          die();
+          echo "
+                    <script>
+                         alert('data gagal diubah!');
+                         document.location.href = '../../proses/function.php';
+                    </script>
+               ";
+     }
+     //selesai ubah postingan
+     die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +45,19 @@ require('../../proses/function.php');
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
      <title>Diary</title>
 </head>
-
+<?php foreach ($profil as $pro) : ?>
 <body>
      <header>
           <nav>
                <ul>
                     <li><a class="fas fa-home" href="../index.php"> Beranda </a></li>
-                    <li><a class="fas fa-user" href="../profil.php"> Profil </a></li>
+                    <li><a class="fas fa-user" href="../$profil.php"> Profil </a></li>
                     <li><a class="fas fa-sign-out-alt" href="../logout.php"> Keluar </a></li>
                </ul>
                <div class="menu-toggle">
                     <input type="checkbox">
-                    <div class="avatar"><img src="../img/azqilana2.jpg" alt="azqilana"></div>
-                    <h4>Muhammad Azqilana</h4>
+                    <div class="avatar"><img src="../img/<?= $pro['gambar'] ?>" alt="azqilana"></div>
+                    <h4><?= $pro['longname'] ?></h4>
                </div>
           </nav>
      </header>
@@ -33,9 +65,9 @@ require('../../proses/function.php');
           <div class="profil">
                <div class="updategambar">
                     <div class="gantigambar">
-                         <img src="../img/azqilana2.jpg" alt="azqilana">
+                         <img src="../img/<?= $pro['gambar'] ?>" alt="azqilana">
                     </div>
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                          <table>
                               <tr>
                                    <td><input type="file" name="gambar" id="gambar"></td>
@@ -53,19 +85,19 @@ require('../../proses/function.php');
                          </tr>
                          <tr>
                               <td><a class="fas fa-user">
-                              <td><input type="text" name="longname" id="longname" placeholder="longname" value="" required></td>
+                              <td><input type="text" name="longname" id="longname" placeholder="longname" value="<?= $pro['longname'] ?>" required></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-at"></a></td>
-                              <td><input type="text" name="username" id="username" placeholder="username" value="" required></td>
+                              <td><input type="text" name="username" id="username" placeholder="username" value="<?= $pro['username'] ?>" required></td>
                          </tr>
                          <tr>
                               <td><a class="far fa-envelope"></a></td>
-                              <td><input type="email" name="email" id="email" placeholder="email@email.com" value="" required></td>
+                              <td><input type="email" name="email" id="email" placeholder="email@email.com" value="<?= $pro['email'] ?>" required></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-mobile"></a></td>
-                              <td><input type="number" name="nomortelephon" id="nomortelephon" placeholder="0812345678910" value="" required></td>
+                              <td><input type="number" name="nomortelephon" id="nomortelephon" placeholder="0812345678910" value="<?= $pro['nomortelephon'] ?>" required></td>
                          </tr>
                          <tr>
                               <td colspan="2"><button type="submit">Update</button></td>
@@ -79,23 +111,23 @@ require('../../proses/function.php');
                          </tr>
                          <tr>
                               <td><a class="fas fa-birthday-cake"></a></td>
-                              <td><input type="date" name="tanggal_lahir" id="tanggal_lahir" value="2000-06-21"></td>
+                              <td><input type="date" name="tanggal_lahir" id="tanggal_lahir" value="<?= $pro['tanggal_lahir'] ?>"></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-venus-mars"></a></td>
-                              <td><input type="text" name="jenis_kelamin" id="jenis_kelamin" value=""></td>
+                              <td><input type="text" name="jenis_kelamin" id="jenis_kelamin" value="<?= $pro['jenis_kelamin'] ?>"></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-map-marker-alt"></a></td>
-                              <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" placeholder="Alamat" value=""></td>
+                              <td><input type="text" name="tempat_tinggal" id="tempat_tinggal" placeholder="Jln" value="<?= $pro['tempat_tinggal'] ?>"></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-building"></a></td>
-                              <td><input type="text" name="pekerjaan" id="pekerjaan" placeholder="pekerjaan" value=""></td>
+                              <td><input type="text" name="pekerjaan" id="pekerjaan" placeholder="pekerjaan" value="<?= $pro['pekerjaan'] ?>"></td>
                          </tr>
                          <tr>
                               <td><a class="fas fa-user-graduate"></a></td>
-                              <td><input type="text" name="sekolah" id="sekolah" placeholder="sekolah" value=""></td>
+                              <td><input type="text" name="sekolah" id="sekolah" placeholder="sekolah" value="<?= $pro['sekolah'] ?>"></td>
                          </tr>
                          <tr>
                               <td colspan="2"><button type="submit">Update</button></td>
@@ -124,6 +156,7 @@ require('../../proses/function.php');
           </div>
      </main>
 </body>
+<?php endforeach; ?>
 <script src="../js/script.js"></script>
 
 </html>
